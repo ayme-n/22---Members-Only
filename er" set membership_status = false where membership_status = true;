@@ -1,0 +1,6 @@
+ id | firstname | lastname | username |                           password                           | membership_status 
+----+-----------+----------+----------+--------------------------------------------------------------+-------------------
+  1 | AIT SAID  | AYMEN    | miminou1 | $2b$10$yjN3P3oa8C8j9PaTzf7bHe7S7dodarJBciyIr98E7B8Dcw7ztwXK. | t
+  6 | TEST      | TEST     | TEST     | $2b$10$xZ4rurdmrsiUjLkCF2cHa.FghuxFpvcd2H1/y1BcV6eiGknmz6GHu | t
+(2 rows)
+

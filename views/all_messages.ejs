@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <% if(messages) { %>
+
+        <h1>Posts</h1>
+
+    <ul>
+
+        <% if(currentUser&&currentUser.membership_status == true){ %>
+
+        <% messages.forEach((msg)=>{ %>
+
+        
+        <li>
+        
+        
+        <%= msg.title %><br>
+        <%= msg.text %><br>
+        <%= new Date(msg.created_at).toLocaleString() %>
+        <br><small><%= msg.username %></small>
+        <br>
+
+        <% if(currentUser.admin){ %>
+
+            <form action="delete_message" method="POST">
+                <input type="hidden" value="<%=msg.message_id%>" name="msg_id">
+                <input type="submit" value="delete">
+
+            </form>
+
+        <% } %>
+
+        
+
+        </li>
+
+        <% }) %>
+
+        <% } else { %>
+
+            <button><a href="/premuim">Join Premuim</a></button>
+
+            <% messages.forEach((msg)=>{ %>
+
+                <li> 
+                    
+                    
+                    <%= msg.title %><br>
+                    <%= msg.text %> <br>
+                    <small>anonymous</small>
+                    
+                </li>
+
+                <br>
+
+            <% }) %>
+
+            
+        <% } %>
+
+        
+    </ul>
+    <% } %>
+    
+</body>
+</html>
